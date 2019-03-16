@@ -1,0 +1,65 @@
+public class Funcionario {
+
+	private String nome;
+	protected double salario;
+	
+	public void setSalario(double salario){
+		this.salario = salario;
+	}
+
+	public double getBonus() {
+		return this.salario * 0.2;
+	}
+}
+
+class Gerente extends Funcionario {
+	
+	public double getBonus() {
+		return this.salario * 0.3;
+	}
+}
+
+class Desenvolvedor extends Funcionario {
+
+	public double getBonus(){
+		return this.salario * 0.25;
+	}
+}
+
+class TotalizadorDeBonus {
+	
+	public double total = 0;
+
+	public void adiciona(double valor) {
+		total += valor;
+	}
+
+	public double getTotal(){
+		return this.total;
+	}
+}
+
+class TesteFuncionario{
+	public static void main(String[] args){
+		Funcionario mateus = new Funcionario();
+	 	mateus.setSalario(1000.0);
+
+		System.out.println(mateus.getBonus());
+
+		Gerente will = new Gerente ();
+		will.setSalario(3000.0);
+
+		System.out.println(will.getBonus());
+	
+		Desenvolvedor jose = nerw Desenvolvedor();
+		jose.setSalario(2000.0)
+
+		System.out.println(jose.getBonus());
+
+		TotalizadorDeBonus totalizador = new TotalizadorDeBonus();
+		totalizador.adiciona(mateus.getBonus);
+		totalizador.adiciona(will.getBonus);
+
+	System.out.println(totalizador.getTotal());
+	}
+]
